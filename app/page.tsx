@@ -40,7 +40,7 @@ const FEATURES = [
   },
 ];
 
-const FREE_ITEMS = ["2 portfolios", "5 wallets", "6 categories", "3 tags", "Core dashboard"];
+const FREE_ITEMS = ["1 portfolio", "5 wallets", "6 categories", "3 tags", "Core dashboard"];
 const PRO_ITEMS  = ["Unlimited everything", "All dashboard charts", "Advanced insights", "Future features"];
 
 export default function Home() {
