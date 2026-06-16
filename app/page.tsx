@@ -43,6 +43,8 @@ const FEATURES = [
 const FREE_ITEMS = ["1 portfolio", "5 wallets", "6 categories", "3 tags", "Core dashboard"];
 const PRO_ITEMS  = ["Unlimited everything", "All dashboard charts", "Advanced insights", "Future features"];
 
+const APP_STORE_URL = "https://apps.apple.com/id/app/netwise-personal-finance/id6775243049";
+
 export default function Home() {
   return (
     <div style={{ minHeight: "100vh" }}>
@@ -143,7 +145,9 @@ export default function Home() {
 
           <div className="fade-up d4 mt-10 flex items-center justify-center gap-4 flex-wrap">
             <a
-              href="#"
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl font-semibold text-white grad-bg transition-opacity hover:opacity-85"
               style={{ fontSize: "0.95rem", fontFamily: "var(--font-sora)" }}
             >
@@ -157,7 +161,7 @@ export default function Home() {
                 color: "var(--muted)",
               }}
             >
-              Coming soon
+              Free · iOS 17+
             </span>
           </div>
         </div>
