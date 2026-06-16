@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "../Logo";
 
 const SECTIONS = [
   {
@@ -83,14 +83,14 @@ export default function Privacy() {
         className="sticky top-0 z-50"
         style={{
           borderBottom: "1px solid var(--border)",
-          background: "rgba(8,11,24,0.85)",
+          background: "rgba(248,248,243,0.85)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
         }}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 transition-opacity hover:opacity-75">
-            <Image src="/logo.png" alt="NetWise" width={32} height={32} className="rounded-xl" />
+            <Logo size={32} />
             <span style={{ fontFamily: "var(--font-sora)", fontWeight: 700, fontSize: "1.05rem" }}>
               NetWise
             </span>
@@ -109,19 +109,17 @@ export default function Privacy() {
           style={{
             top: "-80px", right: "-100px",
             width: "400px", height: "400px",
-            background: "radial-gradient(circle, rgba(100,80,255,0.1) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(86,108,130,0.10) 0%, transparent 70%)",
           }}
         />
         <div className="relative">
           <div className="fade-up d1">
             <span
-              className="inline-block text-xs px-3 py-1.5 rounded-full mb-6"
+              className="eyebrow inline-block text-xs px-3 py-1.5 rounded-full mb-6"
               style={{
-                background: "rgba(100,80,255,0.1)",
-                border: "1px solid rgba(100,80,255,0.2)",
-                color: "#A090FF",
+                background: "var(--accent-tint)",
+                border: "1px solid rgba(86,108,130,0.2)",
                 fontFamily: "var(--font-dm-mono)",
-                letterSpacing: "0.1em",
               }}
             >
               LEGAL
@@ -163,10 +161,15 @@ export default function Privacy() {
               style={{ animationDelay: `${0.06 * i + 0.2}s` }}
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 text-xl mt-0.5">{s.icon}</div>
+                <div
+                  className="flex-shrink-0 flex items-center justify-center rounded-lg"
+                  style={{ width: 36, height: 36, fontSize: "1.05rem", background: "var(--accent-tint)" }}
+                >
+                  {s.icon}
+                </div>
                 <div className="flex-1 min-w-0">
                   <h2
-                    className="mb-3"
+                    className="mb-3 mt-1"
                     style={{
                       fontFamily: "var(--font-sora)",
                       fontWeight: 600,
@@ -201,7 +204,7 @@ export default function Privacy() {
       <footer style={{ borderTop: "1px solid var(--border)" }}>
         <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <Image src="/logo.png" alt="NetWise" width={22} height={22} className="rounded-md opacity-70" />
+            <Logo size={22} style={{ opacity: 0.85 }} />
             <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: "0.8rem", color: "var(--muted)" }}>
               © 2026 NetWise
             </span>

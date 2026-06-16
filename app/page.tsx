@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Logo } from "./Logo";
 
 const FEATURES = [
   {
@@ -52,20 +52,14 @@ export default function Home() {
         className="sticky top-0 z-50"
         style={{
           borderBottom: "1px solid var(--border)",
-          background: "rgba(8,11,24,0.85)",
+          background: "rgba(248,248,243,0.85)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
         }}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="NetWise"
-              width={32}
-              height={32}
-              className="rounded-xl"
-            />
+            <Logo size={32} />
             <span
               style={{
                 fontFamily: "var(--font-sora)",
@@ -89,7 +83,7 @@ export default function Home() {
 
       {/* ── HERO ── */}
       <section className="relative max-w-6xl mx-auto px-6 pt-24 pb-20 text-center overflow-hidden">
-        {/* ambient glow */}
+        {/* ambient slate wash */}
         <div
           className="absolute pointer-events-none"
           aria-hidden="true"
@@ -99,7 +93,7 @@ export default function Home() {
             transform: "translateX(-50%)",
             width: "700px",
             height: "700px",
-            background: "radial-gradient(circle, rgba(100,80,255,0.14) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(86,108,130,0.10) 0%, transparent 70%)",
             animation: "pulse-glow 5s ease-in-out infinite",
           }}
         />
@@ -108,16 +102,16 @@ export default function Home() {
             <span
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium"
               style={{
-                background: "rgba(100,80,255,0.12)",
-                border: "1px solid rgba(100,80,255,0.25)",
-                color: "#A090FF",
+                background: "var(--accent-tint)",
+                border: "1px solid rgba(86,108,130,0.25)",
+                color: "var(--accent)",
                 fontFamily: "var(--font-dm-mono)",
                 letterSpacing: "0.05em",
               }}
             >
               <span
                 className="w-1.5 h-1.5 rounded-full"
-                style={{ background: "#8B72FF" }}
+                style={{ background: "var(--accent)" }}
               />
               iOS 17+ · Free with Premium
             </span>
@@ -233,14 +227,24 @@ export default function Home() {
               className={`rounded-2xl p-7 fade-up ${f.highlight ? "grad-bg" : "glass"}`}
               style={{ animationDelay: `${0.08 * i + 0.1}s` }}
             >
-              <div className="text-2xl mb-4">{f.icon}</div>
+              <div
+                className="mb-5 flex items-center justify-center rounded-xl"
+                style={{
+                  width: 44,
+                  height: 44,
+                  fontSize: "1.3rem",
+                  background: f.highlight ? "rgba(255,255,255,0.18)" : "var(--accent-tint)",
+                }}
+              >
+                {f.icon}
+              </div>
               <h3
                 className="mb-2"
                 style={{
                   fontFamily: "var(--font-sora)",
                   fontWeight: 600,
                   fontSize: "1rem",
-                  color: "white",
+                  color: f.highlight ? "white" : "var(--ink)",
                 }}
               >
                 {f.title}
@@ -249,7 +253,7 @@ export default function Home() {
                 style={{
                   fontSize: "0.875rem",
                   lineHeight: 1.7,
-                  color: f.highlight ? "rgba(255,255,255,0.72)" : "var(--muted)",
+                  color: f.highlight ? "rgba(255,255,255,0.78)" : "var(--muted)",
                 }}
               >
                 {f.body}
@@ -268,20 +272,10 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Logo large */}
             <div className="flex-shrink-0">
-              <div
-                className="relative"
-                style={{
-                  filter: "drop-shadow(0 0 48px rgba(100,80,255,0.35))",
-                }}
-              >
-                <Image
-                  src="/logo.png"
-                  alt="NetWise app"
-                  width={160}
-                  height={160}
-                  className="rounded-[36px]"
-                />
-              </div>
+              <Logo
+                size={160}
+                style={{ filter: "drop-shadow(0 18px 44px rgba(86,108,130,0.30))" }}
+              />
             </div>
 
             <div>
@@ -349,9 +343,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
           {/* Free */}
-          <div
-            className="rounded-2xl p-8 glass"
-          >
+          <div className="rounded-2xl p-8 glass">
             <div
               style={{ fontFamily: "var(--font-sora)", fontWeight: 700, fontSize: "1.1rem", color: "var(--muted)" }}
             >
@@ -364,6 +356,7 @@ export default function Home() {
                 fontWeight: 800,
                 fontSize: "2.75rem",
                 lineHeight: 1,
+                color: "var(--ink)",
               }}
             >
               $0
@@ -382,7 +375,7 @@ export default function Home() {
             <div
               className="absolute top-5 right-5 text-xs px-3 py-1 rounded-full"
               style={{
-                background: "rgba(255,255,255,0.15)",
+                background: "rgba(255,255,255,0.18)",
                 color: "rgba(255,255,255,0.9)",
                 fontFamily: "var(--font-dm-mono)",
                 fontSize: "0.65rem",
@@ -412,7 +405,7 @@ export default function Home() {
             </div>
             <ul className="space-y-3">
               {PRO_ITEMS.map((f) => (
-                <li key={f} className="flex items-center gap-2.5" style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.8)" }}>
+                <li key={f} className="flex items-center gap-2.5" style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)" }}>
                   <span style={{ color: "white", fontWeight: 700 }}>✓</span> {f}
                 </li>
               ))}
@@ -425,7 +418,7 @@ export default function Home() {
       <footer style={{ borderTop: "1px solid var(--border)" }}>
         <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <Image src="/logo.png" alt="NetWise" width={22} height={22} className="rounded-md opacity-70" />
+            <Logo size={22} style={{ opacity: 0.85 }} />
             <span style={{ fontFamily: "var(--font-dm-mono)", fontSize: "0.8rem", color: "var(--muted)" }}>
               © 2026 NetWise
             </span>
