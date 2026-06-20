@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
+import { getAppConfig, freeTierItems, premiumTierItems } from "./lib/config";
 
 const FEATURES = [
   {
@@ -40,12 +41,16 @@ const FEATURES = [
   },
 ];
 
-const FREE_ITEMS = ["1 portfolio", "5 wallets", "6 categories", "3 tags", "Core dashboard"];
-const PRO_ITEMS  = ["Unlimited everything", "All dashboard charts", "Advanced insights", "Future features"];
-
 const APP_STORE_URL = "https://apps.apple.com/id/app/netwise-personal-finance/id6775243049";
 
-export default function Home() {
+export default async function Home() {
+  // Free-tier limits and premium gating come from the shared backend config
+  // (netwise-api), so the pricing copy stays in sync with the iOS app. Falls
+  // back to bundled defaults if the API is unreachable.
+  const config = await getAppConfig();
+  const freeItems = freeTierItems(config);
+  const proItems = premiumTierItems(config);
+
   return (
     <div style={{ minHeight: "100vh" }}>
 
@@ -366,7 +371,7 @@ export default function Home() {
               $0
             </div>
             <ul className="space-y-3">
-              {FREE_ITEMS.map((f) => (
+              {freeItems.map((f) => (
                 <li key={f} className="flex items-center gap-2.5" style={{ fontSize: "0.875rem", color: "var(--muted)" }}>
                   <span className="grad-text font-bold">✓</span> {f}
                 </li>
@@ -408,7 +413,7 @@ export default function Home() {
               <span style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.55)" }}>/month</span>
             </div>
             <ul className="space-y-3">
-              {PRO_ITEMS.map((f) => (
+              {proItems.map((f) => (
                 <li key={f} className="flex items-center gap-2.5" style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.85)" }}>
                   <span style={{ color: "white", fontWeight: 700 }}>✓</span> {f}
                 </li>
