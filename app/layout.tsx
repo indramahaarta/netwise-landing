@@ -26,7 +26,7 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "NetWise — Personal Finance Tracker for iOS",
   description:
-    "A fully local-first personal finance tracker for iOS. Track wallets, portfolios, and net worth — all on-device, no account required.",
+    "A local-first personal finance tracker for iOS. Track wallets, portfolios, and net worth — stored on your device, no account required.",
 };
 
 export default function RootLayout({

@@ -5,8 +5,8 @@ import { getAppConfig, freeTierItems, premiumTierItems } from "./lib/config";
 const FEATURES = [
   {
     icon: "📱",
-    title: "100% On-Device",
-    body: "Every wallet, portfolio, and transaction lives on your iPhone with Apple SwiftData. Nothing is transmitted anywhere.",
+    title: "Local-First",
+    body: "Your wallets, portfolios, and transactions are stored on your iPhone with Apple SwiftData — no account, no cloud sync. Your data stays yours.",
     highlight: true,
   },
   {
@@ -36,7 +36,7 @@ const FEATURES = [
   {
     icon: "🔒",
     title: "Private by Design",
-    body: "No analytics. No tracking. No ads. We literally cannot see your data — by architecture.",
+    body: "No analytics. No tracking. No ads. We don't collect, store, or sell your financial data.",
     highlight: false,
   },
 ];
@@ -145,7 +145,7 @@ export default async function Home() {
             }}
           >
             Track wallets, portfolios, and net worth — all stored on your
-            iPhone. No account, no cloud, no one watching.
+            iPhone. No account, no cloud sync, no tracking.
           </p>
 
           <div className="fade-up d4 mt-10 flex items-center justify-center gap-4 flex-wrap">

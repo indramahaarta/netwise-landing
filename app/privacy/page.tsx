@@ -145,8 +145,9 @@ export default function Privacy() {
             className="fade-up d4 mt-5 leading-relaxed max-w-xl"
             style={{ color: "var(--muted)", fontSize: "1rem" }}
           >
-            The short version: your data never leaves your device. We have no
-            servers, no accounts, and no access to your financial information.
+            The short version: your financial data is stored on your device. We
+            have no accounts and no servers holding it — we don't collect,
+            store, or sell your information.
           </p>
         </div>
       </header>
