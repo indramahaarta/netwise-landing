@@ -59,7 +59,7 @@ export default async function Home() {
         className="sticky top-0 z-50"
         style={{
           borderBottom: "1px solid var(--border)",
-          background: "rgba(248,248,243,0.85)",
+          background: "rgba(251,251,252,0.82)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
         }}
@@ -100,7 +100,7 @@ export default async function Home() {
             transform: "translateX(-50%)",
             width: "700px",
             height: "700px",
-            background: "radial-gradient(circle, rgba(86,108,130,0.10) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(62,111,168,0.12) 0%, transparent 70%)",
             animation: "pulse-glow 5s ease-in-out infinite",
           }}
         />
@@ -110,7 +110,7 @@ export default async function Home() {
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium"
               style={{
                 background: "var(--accent-tint)",
-                border: "1px solid rgba(86,108,130,0.25)",
+                border: "1px solid rgba(62,111,168,0.25)",
                 color: "var(--accent)",
                 fontFamily: "var(--font-dm-mono)",
                 letterSpacing: "0.05em",
@@ -283,7 +283,7 @@ export default async function Home() {
             <div className="flex-shrink-0">
               <Logo
                 size={160}
-                style={{ filter: "drop-shadow(0 18px 44px rgba(86,108,130,0.30))" }}
+                style={{ filter: "drop-shadow(0 18px 44px rgba(62,111,168,0.22))" }}
               />
             </div>
 

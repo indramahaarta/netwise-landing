@@ -83,7 +83,7 @@ export default function Privacy() {
         className="sticky top-0 z-50"
         style={{
           borderBottom: "1px solid var(--border)",
-          background: "rgba(248,248,243,0.85)",
+          background: "rgba(251,251,252,0.82)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
         }}
@@ -109,7 +109,7 @@ export default function Privacy() {
           style={{
             top: "-80px", right: "-100px",
             width: "400px", height: "400px",
-            background: "radial-gradient(circle, rgba(86,108,130,0.10) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(62,111,168,0.12) 0%, transparent 70%)",
           }}
         />
         <div className="relative">
@@ -118,7 +118,7 @@ export default function Privacy() {
               className="eyebrow inline-block text-xs px-3 py-1.5 rounded-full mb-6"
               style={{
                 background: "var(--accent-tint)",
-                border: "1px solid rgba(86,108,130,0.2)",
+                border: "1px solid rgba(62,111,168,0.2)",
                 fontFamily: "var(--font-dm-mono)",
               }}
             >
