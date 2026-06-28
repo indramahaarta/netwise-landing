@@ -14,7 +14,7 @@ It applies exclusively to the NetWise iOS app. By using NetWise, you agree to th
     title: "Information You Provide",
     body: `All data you enter — wallets, portfolios, transactions, categories, and balances — is stored exclusively on your device using Apple's SwiftData framework. This data is private to your device.
 
-It is never transmitted to any server, never backed up to any cloud service we operate, and never accessible to us under any circumstances. No account creation or sign-in is required to use NetWise.`,
+We never back it up to any cloud service we operate, and you are not required to create an account or sign in to use NetWise. The only time any of this information leaves your device is when you choose to use AI Capture (see below) — and even then it is used only to draft a transaction for you and is never stored by us.`,
   },
   {
     icon: "⚙️",
@@ -31,6 +31,15 @@ No usage events, crash reports, analytics signals, session recordings, or behavi
 No personal information, account identifiers, device fingerprints, or financial balances are ever transmitted. These services may log your device's IP address as part of normal server operations. NetWise has no control over or affiliation with either service.`,
   },
   {
+    icon: "📸",
+    title: "AI Capture",
+    body: `AI Capture is an optional feature you trigger yourself — by scanning or sharing a receipt or transaction. When you use it, the image is read on your device using Apple's on-device text recognition; the image itself never leaves your phone.
+
+Only the extracted text, along with the names of your wallets, categories, and portfolios needed to match the transaction, is sent over an encrypted connection to our processing service and to our AI provider (Anthropic) to turn it into a draft transaction you can review before saving. A random device identifier is also sent so we can enforce fair usage limits and prevent abuse.
+
+We do not store this content, and it is not used to train any AI model. If you never use AI Capture, none of your data is transmitted for this purpose. Refer to Anthropic's privacy policy for how they handle data processed on our behalf.`,
+  },
+  {
     icon: "💳",
     title: "Subscriptions & Payments",
     body: `NetWise offers an optional auto-renewable subscription (NetWise Premium) processed entirely by Apple through the App Store. We never see, store, or handle your payment information — Apple collects and processes all payment details on our behalf.
@@ -42,7 +51,7 @@ Subscriptions renew automatically unless cancelled at least 24 hours before the 
   {
     icon: "🔒",
     title: "Data Security",
-    body: `Your data is protected by your device's built-in security: iOS encryption at rest, and your passcode, Face ID, or Touch ID. We cannot access your data even if compelled — it never reaches us.
+    body: `Your data is protected by your device's built-in security: iOS encryption at rest, and your passcode, Face ID, or Touch ID. Because your data lives on your device rather than on our servers, we cannot access it, even if compelled. The one exception is AI Capture (above), which you trigger manually and which we never store.
 
 For maximum protection, use a strong device passcode and enable Face ID or Touch ID. Losing access to your device without a backup means losing your NetWise data, so we recommend keeping an exported backup in a safe location.`,
   },
@@ -139,15 +148,16 @@ export default function Privacy() {
             className="fade-up d3 mt-3"
             style={{ fontFamily: "var(--font-dm-mono)", fontSize: "0.8rem", color: "var(--muted)" }}
           >
-            Effective May 2026
+            Effective July 2026
           </p>
           <p
             className="fade-up d4 mt-5 leading-relaxed max-w-xl"
             style={{ color: "var(--muted)", fontSize: "1rem" }}
           >
             The short version: your financial data is stored on your device. We
-            have no accounts and no servers holding it — we don't collect,
-            store, or sell your information.
+            have no accounts and no servers that hold it — we don't collect,
+            store, or sell your information. The optional AI Capture feature
+            processes only what you choose to scan, and we never store it.
           </p>
         </div>
       </header>
