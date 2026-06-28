@@ -179,7 +179,7 @@ export default async function Home() {
       >
         <div className="max-w-6xl mx-auto px-6 py-12 grid grid-cols-3 gap-4 text-center">
           {[
-            { num: "0", label: "Servers" },
+            { num: "0", label: "Trackers" },
             { num: "0", label: "Accounts required" },
             { num: "∞", label: "Your privacy" },
           ].map((s) => (
@@ -296,14 +296,16 @@ export default async function Home() {
                   lineHeight: 1.25,
                 }}
               >
-                Not a single byte leaves
+                Your data stays
                 <br />
-                <span className="grad-text">your device.</span>
+                <span className="grad-text">on your device.</span>
               </h2>
               <p className="mt-4 max-w-lg leading-relaxed" style={{ color: "var(--muted)" }}>
-                NetWise is architecturally incapable of seeing your data.
-                There are no servers to breach, no accounts to hack, no cloud
-                to subpoena. Your financial life stays exactly where it should.
+                NetWise keeps your financial life on your iPhone — no account,
+                no cloud sync, nothing for us to store or subpoena. The only
+                things that ever leave are live prices and, when you choose AI
+                Capture, the text you scan — never your full data, and we never
+                keep it.
               </p>
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-5">
                 {[
